@@ -1,0 +1,15 @@
+import './runtime.js';
+import '@fontsource/nunito/latin-600.css';
+import '@fontsource/nunito/latin-700.css';
+import '@fontsource/nunito/latin-800.css';
+import '@fontsource/fredoka/latin-600.css';
+import '@fontsource/caveat/latin-700.css';
+import './legacy/styles.css';
+import './legacy/config.js';
+import './legacy/art.js';
+import './legacy/qr.js';
+import './legacy/engine.js';
+import './legacy/games.js';
+import './migrate.js';
+import './legacy/app.js';
+import './duo/client.js';

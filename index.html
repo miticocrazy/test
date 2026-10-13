@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2A1428">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Aventura">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>Una pequeña aventura</title>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <div id="app">
+    <section id="scr-load" class="screen is-on" aria-label="Cargando">
+      <div class="loader" id="load-pet"></div>
+    </section>
+
+    <section id="scr-title" class="screen" aria-label="Portada"></section>
+
+    <section id="scr-map" class="screen" aria-label="Mapa de la aventura">
+      <div class="map-scroll" id="map-scroll">
+        <div class="map-top" aria-hidden="true"></div>
+        <div class="map-world" id="map-world"></div>
+        <div class="map-pad"></div>
+      </div>
+      <header class="hud">
+        <button class="lvl" id="hud-lvl" data-act="hudlvl">
+          <span class="lvl__badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg><b id="hud-lvnum">1</b></span>
+          <span class="lvl__meta" aria-hidden="true">
+            <span class="lvl__name" id="hud-lvname">Exploradora</span>
+            <span class="lvl__row"><span class="xpbar"><span class="xpbar__fill" id="hud-fill"></span></span><span class="lvl__xp" id="hud-xp">0 XP</span></span>
+          </span>
+        </button>
+        <button class="icon-btn" id="hud-bag" data-act="collection" aria-label="Mis descubrimientos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bag"/></svg><span class="dot" hidden></span></button>
+        <button class="icon-btn" data-act="settings" aria-label="Ajustes"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gear"/></svg></button>
+      </header>
+      <div class="mbottom">
+        <button class="pausebtn" data-act="pause"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-moon"/></svg><span>Lo dejo aquí por hoy</span></button>
+        <button class="mhint" id="mhint" hidden><span class="mhint__c bob" id="mhint-c" aria-hidden="true"></span><p class="mhint__t" id="mhint-t" aria-live="polite"></p></button>
+      </div>
+    </section>
+
+    <section id="scr-chapter" class="screen" aria-label="Capítulo">
+      <div class="chap scroll" id="chap"></div>
+    </section>
+
+    <section id="scr-game" class="screen screen--game" aria-labelledby="g-title">
+      <header class="gbar">
+        <button class="icon-btn" data-act="game-exit" aria-label="Volver al capítulo"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-back"/></svg></button>
+        <div class="gbar__title"><span class="kicker" id="g-kicker"></span><h2 id="g-title">Reto</h2></div>
+        <button class="icon-btn" data-act="game-help" aria-label="Cómo se juega"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-help"/></svg></button>
+      </header>
+      <div class="gstage" id="gstage"></div>
+      <footer class="gfoot">
+        <div class="gassist" id="gassist" hidden></div>
+        <div class="gsay">
+          <div class="gsay__c" id="g-pet" aria-hidden="true"></div>
+          <p class="gsay__t" id="g-say" aria-live="polite"></p>
+          <button class="btn btn--soft btn--sm gsay__hint" data-act="game-hint" aria-label="Pista"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bulb"/></svg><span>Pista</span></button>
+        </div>
+      </footer>
+    </section>
+
+    <section id="scr-connect" class="screen" aria-label="Un ratito para ti">
+      <div class="conn scroll" id="conn"></div>
+    </section>
+
+    <section id="scr-finale" class="screen" aria-label="La puerta del viernes"></section>
+
+    <section id="scr-collection" class="screen" aria-label="Mis descubrimientos">
+      <div class="coll scroll" id="coll"></div>
+    </section>
+  </div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
